@@ -5,6 +5,13 @@ function clear() {
   mainContent.empty();
 }
 
+$("a").click(function (event) {
+  $("a").css("color", "#ff3399");
+  $("a").css("font-family", "Montserrat");
+  $(event.target).css("color", "#990070");
+  $(event.target).css("font-family", "MontserratMedium");
+});
+
 var count = 1;
 function transition() {
   if (count == 1) {
@@ -31,6 +38,7 @@ setInterval(transition, 6000);
 
 $("#about").click(function () {
   clear();
+  navColorChange("#about");
 });
 
 $("#ceramic").click(function () {

@@ -38,9 +38,11 @@ body {
       margin-left: 50px;
       a {
         cursor: pointer;
+        text-decoration: none;
         font-family: Montserrat;
         font-size: larger;
         text-decoration: none;
+        color: #ff3399
       }
     }
   }
@@ -109,6 +111,18 @@ footer {
   src: url("../fonts/Montserrat-Light.ttf");
 }
 
-img{
+@font-face {
+  font-family: "MontserratMedium";
+  src: url("../fonts/Montserrat-Medium.ttf");
+}
+
+img {
   cursor: pointer;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
