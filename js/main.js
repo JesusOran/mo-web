@@ -1,5 +1,6 @@
 var mainContent = $("#main");
 var ImgGallery;
+$('img').hide().fadeIn(3000)
 
 function clear() {
   mainContent.empty();
@@ -78,7 +79,7 @@ function loadImages(max, galleryType) {
           .append(modalBody.append(image.clone()))
       )
     );
-    mainContent.append(image);
+    mainContent.append(image.hide().fadeIn(2000));
     mainContent.next().append(modal);
   }
 }
