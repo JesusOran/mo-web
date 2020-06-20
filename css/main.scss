@@ -1,0 +1,114 @@
+:root {
+  --rowNum: 2;
+  --colNum: 3;
+  --gridHeight: 300px;
+  --wrapperH: 40px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/assests/fondosuminagashi.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  a,
+  #firma {
+    height: 90%;
+  }
+}
+
+#navbar {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    margin: 10px;
+    li {
+      margin-left: 50px;
+      a {
+        cursor: pointer;
+        font-family: Montserrat;
+        font-size: larger;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#main {
+  margin: 20px;
+  padding: 100px;
+  display: grid;
+  grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
+  grid-template-columns: repeat(var(--colNum), auto);
+  row-gap: 15px;
+  column-gap: 20px;
+  justify-content: center;
+  .item1 {
+    background-image: url("../img/gallery/ceramica/20.jpg");
+  }
+  .item2 {
+    background-image: url("../img/gallery/ceramica/21.jpg");
+  }
+  .item3 {
+    background-image: url("../img/gallery/ceramica/22.jpg");
+    grid-row: 1 / span 2;
+    grid-column: 3;
+  }
+  .item4 {
+    background-image: url("../img/gallery/ceramica/23.jpg");
+  }
+  .item5 {
+    background-image: url("../img/gallery/ceramica/24.jpg");
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position-x: center;
+    .category {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 150px;
+      width: 100%;
+      visibility: hidden;
+      font-family: Montserrat;
+    }
+    &:hover:not(.item3) .category {
+      visibility: visible;
+      backdrop-filter: blur(3px);
+    }
+  }
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf");
+}
+
+img{
+  cursor: pointer;
+}

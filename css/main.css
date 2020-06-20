@@ -1,0 +1,161 @@
+:root {
+  --rowNum: 2;
+  --colNum: 3;
+  --gridHeight: 300px;
+  --wrapperH: 40px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../img/assests/fondosuminagashi.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+}
+
+#title a,
+#title #firma {
+  height: 90%;
+}
+
+#navbar {
+  margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  list-style-type: none;
+  margin: 10px;
+}
+
+#navbar ul li {
+  margin-left: 50px;
+}
+
+#navbar ul li a {
+  cursor: pointer;
+  font-family: Montserrat;
+  font-size: larger;
+  text-decoration: none;
+}
+
+#main {
+  margin: 20px;
+  padding: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (var(--gridHeight))[var];
+      grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
+  -ms-grid-columns: (auto)[var];
+      grid-template-columns: repeat(var(--colNum), auto);
+  row-gap: 15px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main .item1 {
+  background-image: url("../img/gallery/ceramica/20.jpg");
+}
+
+#main .item2 {
+  background-image: url("../img/gallery/ceramica/21.jpg");
+}
+
+#main .item3 {
+  background-image: url("../img/gallery/ceramica/22.jpg");
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#main .item4 {
+  background-image: url("../img/gallery/ceramica/23.jpg");
+}
+
+#main .item5 {
+  background-image: url("../img/gallery/ceramica/24.jpg");
+}
+
+#main div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-size: cover;
+  background-position-x: center;
+}
+
+#main div .category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 150px;
+  width: 100%;
+  visibility: hidden;
+  font-family: Montserrat;
+}
+
+#main div:hover:not(.item3) .category {
+  visibility: visible;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.ttf");
+}
+
+img {
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */
