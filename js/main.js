@@ -10,19 +10,19 @@ function transition() {
   if (count == 1) {
     $(".item3").css({
       transition: "2s ease-in-out",
-      "background-image": `url("../img/gallery/ceramica/1.jpg")`,
+      "background-image": `url("img/gallery/ceramica/1.jpg")`,
     });
     count = 2;
   } else if (count == 2) {
     $(".item3").css({
       transition: "2s ease-in-out",
-      "background-image": `url("../img/gallery/ceramica/2.jpg")`,
+      "background-image": `url("img/gallery/ceramica/2.jpg")`,
     });
     count = 3;
   } else if (count == 3) {
     $(".item3").css({
       transition: "2s ease-in-out",
-      "background-image": `url("../img/gallery/ceramica/3.jpg")`,
+      "background-image": `url("img/gallery/ceramica/3.jpg")`,
     });
     count = 1;
   }
@@ -50,7 +50,7 @@ $("#water").click(function () {
 function loadImages(max, galleryType) {
   for (var i = 0; i <= max; i++) {
     var image = $(
-      `<img class="galleryImage" src="../img/gallery/${galleryType}/${i}.jpg" alt="${galleryType}${i}" loading="lazy" width="100px" height="100px" data-toggle="modal" data-target="#modal${galleryType}${i}">`
+      `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryType}${i}" loading="lazy" width="100px" height="100px" data-toggle="modal" data-target="#modal${galleryType}${i}">`
     );
     var modal = $(
       `<div class="modal fade" id="modal${galleryType}${i}" tabindex="-1" role="dialog" aria-labelledby="modal${galleryType}${i}Label" aria-hidden="true">`
