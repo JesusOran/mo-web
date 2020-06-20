@@ -56,6 +56,13 @@ $("#water").click(function () {
   document.documentElement.style.setProperty("--colNum", 5);
 });
 
+$("#paper").click(function () {
+  clear();
+  loadImages(33, "papelycarton");
+  document.documentElement.style.setProperty("--rowNum", 7);
+  document.documentElement.style.setProperty("--colNum", 5);
+});
+
 function loadImages(max, galleryType) {
   for (var i = 0; i <= max; i++) {
     var image = $(
