@@ -44,7 +44,7 @@ $("#about").click(function () {
 
 $("#ceramic").click(function () {
   clear();
-  loadImages(33, "ceramicamin");
+  loadImages(33, "ceramica");
   document.documentElement.style.setProperty("--rowNum", 7);
   document.documentElement.style.setProperty("--colNum", 5);
 });
@@ -58,7 +58,7 @@ $("#water").click(function () {
 
 $("#paper").click(function () {
   clear();
-  loadImages(33, "papelycartonmin");
+  loadImages(33, "papelycarton");
   document.documentElement.style.setProperty("--rowNum", 7);
   document.documentElement.style.setProperty("--colNum", 5);
 });
