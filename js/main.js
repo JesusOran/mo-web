@@ -78,6 +78,15 @@ function loadImages(max, galleryType) {
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
+
+  //prevent scrolling
+  {
+    $(document).bind('cbox_open', function(){
+        $('body').css({overflow:'hidden'});
+    }).bind('cbox_closed', function(){
+        $('body').css({overflow:'auto'});
+    });
+  }
   var resizeTimer;
   function resizeColorBox() {
     if (resizeTimer) clearTimeout(resizeTimer);
