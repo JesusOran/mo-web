@@ -6,7 +6,9 @@
 }
 
 html,
-body {
+body,
+div,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -42,7 +44,7 @@ body {
         font-family: Montserrat;
         font-size: larger;
         text-decoration: none;
-        color: #ff3399
+        color: #ff3399;
       }
     }
   }

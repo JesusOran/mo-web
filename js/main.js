@@ -1,6 +1,6 @@
 var mainContent = $("#main");
 var ImgGallery;
-$('img').hide().fadeIn(3000)
+$("img").hide().fadeIn(3000);
 
 function clear() {
   mainContent.empty();
@@ -39,7 +39,6 @@ setInterval(transition, 6000);
 
 $("#about").click(function () {
   clear();
-  navColorChange("#about");
 });
 
 $("#ceramic").click(function () {
@@ -65,28 +64,31 @@ $("#paper").click(function () {
 
 function loadImages(max, galleryType) {
   for (var i = 0; i <= max; i++) {
+    var colorBox = $(
+      `<a class="${galleryType}Gallery" href="img/gallery/${galleryType}/${i}.jpg">`
+    );
     var image = $(
-      `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryType}${i}" loading="lazy" width="100px" height="100px" data-toggle="modal" data-target="#modal${galleryType}${i}">`
+      `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryType}${i}" loading="lazy" width="100px" height="100px">`
     );
-    var modal = $(
-      `<div class="modal fade" id="modal${galleryType}${i}" tabindex="-1" role="dialog" aria-labelledby="modal${galleryType}${i}Label" aria-hidden="true">`
-    );
-    var modalDialog = $(`<div class="modal-dialog">`);
-    var modalContent = $(`<div class="modal-content">`);
-    var modalHeader = $(`<div class="modal-header">`);
-    var modalClose = $(`<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>`);
-    var modalBody = $(`<div class="modal-body">`);
-
-    modal.append(
-      modalDialog.append(
-        modalContent
-          .append(modalHeader.append(modalClose))
-          .append(modalBody.append(image.clone()))
-      )
-    );
-    mainContent.append(image.hide().fadeIn(2000));
-    mainContent.next().append(modal);
+    colorBox.append(image);
+    $(`.${galleryType}Gallery`).colorbox({
+      rel: `${galleryType}Gallery`,
+      maxWidth: "95%",
+      maxHeight: "95%",
+    });
+    mainContent.append(colorBox.hide().fadeIn(2000));
   }
+  var resizeTimer;
+  function resizeColorBox() {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (jQuery("#cboxOverlay").is(":visible")) {
+        jQuery.colorbox.load(true);
+      }
+    }, 300);
+  }
+
+  // Resize Colorbox when resizing window or changing mobile device orientation
+  jQuery(window).resize(resizeColorBox);
+  window.addEventListener("orientationchange", resizeColorBox, false);
 }
