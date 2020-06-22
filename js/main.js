@@ -76,7 +76,7 @@ function loadImages(max, galleryType) {
       maxWidth: "95%",
       maxHeight: "95%",
     });
-    mainContent.append(colorBox.hide().fadeIn(2000));
+    mainContent.append(colorBox.hide().fadeIn(500));
   }
   var resizeTimer;
   function resizeColorBox() {
