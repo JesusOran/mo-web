@@ -52,7 +52,8 @@ ul {
 
 #main {
   margin: 20px;
-  padding: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
   display: grid;
   grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
   grid-template-columns: repeat(var(--colNum), auto);

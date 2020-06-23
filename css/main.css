@@ -71,7 +71,8 @@ ul {
 
 #main {
   margin: 20px;
-  padding: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (var(--gridHeight))[var];

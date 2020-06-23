@@ -74,8 +74,8 @@ function loadImages(max, galleryType) {
     colorBox.append(image);
     $(`.${galleryType}Gallery`).colorbox({
       rel: `${galleryType}Gallery`,
-      maxWidth: "95%",
-      maxHeight: "95%",
+      maxWidth: "80%",
+      maxHeight: "80%",
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
