@@ -37,6 +37,7 @@ function transition() {
 }
 setInterval(transition, 6000);
 
+//refactorización pendiente
 $("#about").click(function () {
   clear();
 });
