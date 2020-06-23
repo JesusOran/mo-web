@@ -76,17 +76,20 @@ function loadImages(max, galleryType) {
       rel: `${galleryType}Gallery`,
       maxWidth: "80%",
       maxHeight: "80%",
+      current: false,
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
 
   //prevent scrolling
   {
-    $(document).bind('cbox_open', function(){
-        $('body').css({overflow:'hidden'});
-    }).bind('cbox_closed', function(){
-        $('body').css({overflow:'auto'});
-    });
+    $(document)
+      .bind("cbox_open", function () {
+        $("body").css({ overflow: "hidden" });
+      })
+      .bind("cbox_closed", function () {
+        $("body").css({ overflow: "auto" });
+      });
   }
   var resizeTimer;
   function resizeColorBox() {
@@ -102,15 +105,15 @@ function loadImages(max, galleryType) {
   jQuery(window).resize(resizeColorBox);
   window.addEventListener("orientationchange", resizeColorBox, false);
 
-  jQuery("#colorbox").swipe( {
+  jQuery("#colorbox").swipe({
     //Generic swipe handler for all directions
-    swipeLeft:function(event, direction, distance, duration, fingerCount) {
-       jQuery.colorbox.next();
+    swipeLeft: function (event, direction, distance, duration, fingerCount) {
+      jQuery.colorbox.next();
     },
-    swipeRight:function(event, direction, distance, duration, fingerCount) {
-       jQuery.colorbox.prev();
+    swipeRight: function (event, direction, distance, duration, fingerCount) {
+      jQuery.colorbox.prev();
     },
     //Default is 75px, set to 0 for demo so any distance triggers swipe
-   //threshold:0
-});
+    //threshold:0
+  });
 }
