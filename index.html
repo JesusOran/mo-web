@@ -10,7 +10,10 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="node_modules/jquery-colorbox/example1/colorbox.css">
+    <link
+      rel="stylesheet"
+      href="node_modules/jquery-colorbox/example1/colorbox.css"
+    />
     <title>Marlene Orán</title>
   </head>
   <body>
@@ -19,7 +22,7 @@
         ><img id="firma" src="img/assests/FIRMABLANCO-01.png"
       /></a>
     </div>
-    <nav id="navbar" class="sticky">
+    <nav id="navbar">
       <ul>
         <li>
           <a
@@ -33,7 +36,18 @@
         <li><a id="water">Suminagashi y Ebru</a></li>
         <li><a id="paper">Papel y Cartón</a></li>
         <li><a id="inclusive">Arte inclusivo</a></li>
-        <li><a id="misc">Otros</a></li>
+        <li>
+          <a id="misc"
+            ><div class="dropdown">
+              <a class="dropbtn">Otros</a>
+              <div class="dropdown-content">
+                <a id="flowdraws">Flow Draws</a>
+                <a id="logos">Logotipos</a>
+                <a id="relieve">Relieves</a>
+              </div>
+            </div></a
+          >
+        </li>
         <li><a id="contact">Contacto</a></li>
       </ul>
     </nav>
@@ -61,7 +75,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="node_modules/jquery-colorbox/jquery.colorbox-min.js"></script>
-    <script type="text/javascript" src="TouchSwipe-Jquery-Plugin-master/jquery.touchSwipe.min.js"></script>
+    <script
+      type="text/javascript"
+      src="TouchSwipe-Jquery-Plugin-master/jquery.touchSwipe.min.js"
+    ></script>
     <script type="module" src="js/js.min.js"></script>
   </body>
 </html>

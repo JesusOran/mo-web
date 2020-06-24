@@ -63,17 +63,42 @@ $("#paper").click(function () {
   document.documentElement.style.setProperty("--colNum", 5);
 });
 
+$("#flowdraws").click(function () {
+  clear();
+  loadImages(24, "otros\\flowdraws");
+  document.documentElement.style.setProperty("--rowNum", 5);
+  document.documentElement.style.setProperty("--colNum", 5);
+});
+
+$("#logos").click(function () {
+  clear();
+  loadImages(6, "otros\\logotipos");
+  document.documentElement.style.setProperty("--rowNum", 2);
+  document.documentElement.style.setProperty("--colNum", 5);
+});
+
+$("#relieve").click(function () {
+  clear();
+  loadImages(4, "otros\\relieves");
+  document.documentElement.style.setProperty("--rowNum", 2);
+  document.documentElement.style.setProperty("--colNum", 5);
+});
+
 function loadImages(max, galleryType) {
+  var galleryCheck = galleryType;
+  if (galleryType.includes("otros\\")){
+    galleryCheck = "otros"
+  }
   for (var i = 0; i <= max; i++) {
     var colorBox = $(
-      `<a class="${galleryType}Gallery" href="img/gallery/${galleryType}/${i}.jpg">`
+      `<a class="${galleryCheck}Gallery" href="img/gallery/${galleryType}/${i}.jpg">`
     );
     var image = $(
       `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryType}${i}" loading="lazy" width="100px" height="100px">`
     );
     colorBox.append(image);
-    $(`.${galleryType}Gallery`).colorbox({
-      rel: `${galleryType}Gallery`,
+    $(`.${galleryCheck}Gallery`).colorbox({
+      rel: `${galleryCheck}Gallery`,
       maxWidth: "80%",
       maxHeight: "80%",
       current: false,
