@@ -86,15 +86,15 @@ $("#relieve").click(function () {
 
 function loadImages(max, galleryType) {
   var galleryCheck = galleryType;
-  if (galleryType.includes("otros\\")){
-    galleryCheck = "otros"
+  if (galleryType.includes("otros\\")) {
+    galleryCheck = "otros";
   }
-  for (var i = 0; i <= max; i++) {
+  for (var i = 0; i <= max + 1; i++) {
     var colorBox = $(
       `<a class="${galleryCheck}Gallery" href="img/gallery/${galleryType}/${i}.jpg">`
     );
     var image = $(
-      `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryType}${i}" loading="lazy" width="100px" height="100px">`
+      `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryCheck}${i}" loading="lazy" width="100px" height="100px">`
     );
     colorBox.append(image);
     $(`.${galleryCheck}Gallery`).colorbox({
@@ -105,6 +105,7 @@ function loadImages(max, galleryType) {
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
+  mainContent.children().last().remove();
 
   //prevent scrolling
   {
