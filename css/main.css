@@ -47,6 +47,7 @@ ul {
 
 #title a,
 #title #firma {
+  width: 700px;
   max-width: 100%;
   height: 100%;
 }
