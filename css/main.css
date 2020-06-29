@@ -13,6 +13,20 @@ ul {
   padding: 0;
 }
 
+@media (max-width: 1000px) {
+  nav {
+    /* Reverse the axis of the header, making it vertical. */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* Align items to the begining (the left) of the header. */
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 #title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,13 +39,16 @@ ul {
           align-items: center;
   background-image: url("../img/assests/fondosuminagashi.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
   width: 100%;
   height: 300px;
 }
 
 #title a,
 #title #firma {
-  height: 90%;
+  max-width: 100%;
+  height: 100%;
 }
 
 #navbar {
@@ -70,21 +87,22 @@ ul {
 }
 
 #main {
-  margin: 20px;
+  width: 100%;
+  height: auto;
   padding-left: 100px;
   padding-right: 100px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (var(--gridHeight))[var];
-      grid-template-rows: repeat(var(--rowNum), var(--gridHeight));
-  -ms-grid-columns: (auto)[var];
-      grid-template-columns: repeat(var(--colNum), auto);
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
   row-gap: 15px;
   -webkit-column-gap: 20px;
           column-gap: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #main .item1 {
@@ -148,6 +166,13 @@ ul {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.galleryImage:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 footer {
@@ -167,6 +192,17 @@ footer {
 
 img {
   cursor: pointer;
+}
+
+.container {
+  text-align: justify;
+}
+
+.container #portrait {
+  border-radius: 360px;
+  height: 80%;
+  cursor: default;
+  margin: 30px;
 }
 
 .dropdown {
