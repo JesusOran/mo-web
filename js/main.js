@@ -150,7 +150,7 @@ function loadImages(max, galleryType) {
       jQuery.colorbox.prev();
     },
     //Default is 75px, set to 0 for demo so any distance triggers swipe
-    //threshold:0
+    threshold:0
   });
 }
 
@@ -174,3 +174,14 @@ mybutton.click(function () {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0;
 }); // For Chrome, Firefox, IE and Opera
+
+var mobileNav = $(".icon");
+mobileNav.click(function(){
+  var x = document.getElementById("navbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+)

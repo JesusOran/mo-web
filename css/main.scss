@@ -13,16 +13,6 @@ ul {
   padding: 0;
 }
 
-@media (max-width: 1000px) {
-  nav {
-    /* Reverse the axis of the header, making it vertical. */
-    flex-direction: column;
-
-    /* Align items to the begining (the left) of the header. */
-    align-items: flex-start;
-  }
-}
-
 #title {
   display: flex;
   justify-content: center;
@@ -43,23 +33,62 @@ ul {
 
 #navbar {
   margin: 30px;
-  display: flex;
-  justify-content: center;
   ul {
-    display: flex;
-    flex-flow: row wrap;
     list-style-type: none;
     margin: 10px;
     li {
       margin-left: 50px;
+      a.icon {
+        font-family: initial !important;
+      }
       a {
         cursor: pointer;
         text-decoration: none;
         font-family: Montserrat;
         font-size: larger;
-        text-decoration: none;
         color: #ff3399;
       }
+    }
+  }
+}
+
+.navbar {
+  justify-content: center !important;
+  li {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar li:not(:first-child):not(:last-child) {
+    display: none;
+  }
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: relative;
+    .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    li {
+      float: none;
+      display: block !important;
+      text-align: left;
     }
   }
 }
@@ -93,17 +122,17 @@ ul {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  word-break:break-all;
+  word-break: break-all;
   text-align: start;
   padding-left: 20%;
   padding-right: 20%;
 }
 
-.galleryInfo{
+.galleryInfo {
   font-size: 20px;
 }
 
-.mainTitle{
+.mainTitle {
   padding-bottom: 30px;
 }
 
@@ -126,8 +155,6 @@ ul {
   }
   .item3 {
     background-image: url("../img/gallery/ceramica/22.jpg");
-    grid-row: 1 / span 2;
-    grid-column: 3;
   }
   .item4 {
     background-image: url("../img/gallery/ceramica/23.jpg");
