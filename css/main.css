@@ -13,6 +13,20 @@ ul {
   padding: 0;
 }
 
+@media (max-width: 1000px) {
+  nav {
+    /* Reverse the axis of the header, making it vertical. */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* Align items to the begining (the left) of the header. */
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 #title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,9 +54,22 @@ ul {
 
 #navbar {
   margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   list-style-type: none;
   margin: 10px;
 }
@@ -51,61 +78,13 @@ ul {
   margin-left: 50px;
 }
 
-#navbar ul li a.icon {
-  font-family: initial !important;
-}
-
 #navbar ul li a {
   cursor: pointer;
   text-decoration: none;
   font-family: Montserrat;
   font-size: larger;
-  color: #ff3399;
-}
-
-.navbar {
-  -webkit-box-pack: center !important;
-      -ms-flex-pack: center !important;
-          justify-content: center !important;
-}
-
-.navbar li {
-  float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar .icon {
-  display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .navbar li:not(:first-child):not(:last-child) {
-    display: none;
-  }
-  .navbar a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .navbar.responsive {
-    position: relative;
-  }
-  .navbar.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navbar.responsive li {
-    float: none;
-    display: block !important;
-    text-align: left;
-  }
+  color: #ff3399;
 }
 
 #myBtn {
@@ -204,6 +183,11 @@ ul {
 
 #main .item3 {
   background-image: url("../img/gallery/ceramica/22.jpg");
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+  -ms-grid-column: 3;
+  grid-column: 3;
 }
 
 #main .item4 {
