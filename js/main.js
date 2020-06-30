@@ -156,13 +156,13 @@ function loadImages(max, galleryType) {
 
 var mybutton = $("#myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 50px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     mybutton.css("display", "block");
   } else {
     mybutton.css("display", "none");
