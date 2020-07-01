@@ -112,6 +112,7 @@ function loadImages(max, galleryType) {
       maxWidth: "80%",
       maxHeight: "80%",
       current: false,
+      scrolling: false,
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
@@ -127,19 +128,19 @@ function loadImages(max, galleryType) {
         $("body").css({ overflow: "auto" });
       });
   }
-  var resizeTimer;
+  /*var resizeTimer;
   function resizeColorBox() {
     if (resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
       if (jQuery("#cboxOverlay").is(":visible")) {
-        jQuery.colorbox.load(true);
+        colorbox.load(true);
       }
     }, 300);
   }
 
   // Resize Colorbox when resizing window or changing mobile device orientation
   jQuery(window).resize(resizeColorBox);
-  window.addEventListener("orientationchange", resizeColorBox, false);
+  window.addEventListener("orientationchange", resizeColorBox, false);*/
 
   jQuery("#colorbox").swipe({
     //Generic swipe handler for all directions
@@ -150,7 +151,7 @@ function loadImages(max, galleryType) {
       jQuery.colorbox.prev();
     },
     //Default is 75px, set to 0 for demo so any distance triggers swipe
-    threshold:0
+    threshold: 0,
   });
 }
 
@@ -162,7 +163,10 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+  if (
+    document.body.scrollTop > 400 ||
+    document.documentElement.scrollTop > 400
+  ) {
     mybutton.css("display", "block");
   } else {
     mybutton.css("display", "none");
@@ -176,12 +180,11 @@ mybutton.click(function () {
 }); // For Chrome, Firefox, IE and Opera
 
 var mobileNav = $(".icon");
-mobileNav.click(function(){
+mobileNav.click(function () {
   var x = document.getElementById("navbar");
-  if (x.className === "navbar") {
+  if (x.className === "mainNav") {
     x.className += " responsive";
   } else {
-    x.className = "navbar";
+    x.className = "mainNav";
   }
-}
-)
+});
