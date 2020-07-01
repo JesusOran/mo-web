@@ -119,7 +119,7 @@ function loadImages(max, galleryType) {
   mainContent.children().last().remove();
 
   //prevent scrolling
-  /*{
+  {
     $(document)
       .bind("cbox_open", function () {
         $("body").css({ overflow: "hidden" });
@@ -133,14 +133,14 @@ function loadImages(max, galleryType) {
     if (resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
       if (jQuery("#cboxOverlay").is(":visible")) {
-        colorbox.load(true);
+        jQuery.colorbox.resize({width:'90%', height:'90%'})
       }
     }, 300);
   }
 
   // Resize Colorbox when resizing window or changing mobile device orientation
   jQuery(window).resize(resizeColorBox);
-  window.addEventListener("orientationchange", resizeColorBox, false);*/
+  window.addEventListener("orientationchange", resizeColorBox, false);
 
   jQuery("#colorbox").swipe({
     //Generic swipe handler for all directions
