@@ -119,7 +119,7 @@ function loadImages(max, galleryType) {
   mainContent.children().last().remove();
 
   //prevent scrolling
-  {
+  /*{
     $(document)
       .bind("cbox_open", function () {
         $("body").css({ overflow: "hidden" });
@@ -128,7 +128,7 @@ function loadImages(max, galleryType) {
         $("body").css({ overflow: "auto" });
       });
   }
-  /*var resizeTimer;
+  var resizeTimer;
   function resizeColorBox() {
     if (resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
