@@ -133,7 +133,7 @@ function loadImages(max, galleryType) {
     if (resizeTimer) clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
       if (jQuery("#cboxOverlay").is(":visible")) {
-        jQuery.colorbox.resize({width:'90%', height:'90%'})
+        jQuery.colorbox.resize({width:'80%', height:'80%'})
       }
     }, 300);
   }
