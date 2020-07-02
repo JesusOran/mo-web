@@ -113,30 +113,12 @@ function loadImages(max, galleryType) {
       maxHeight: "80%",
       current: false,
       scrolling: false,
+      scalePhotos: true,
+      reposition:true,
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
   mainContent.children().last().remove();
-
-  //prevent scrolling
-  {
-    $(document)
-      .bind("cbox_open", function () {
-        $("body").css({ overflow: "hidden" });
-      })
-      .bind("cbox_closed", function () {
-        $("body").css({ overflow: "auto" });
-      });
-  }
-  var resizeTimer;
-  function resizeColorBox() {
-    if (resizeTimer) clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (jQuery("#cboxOverlay").is(":visible")) {
-        jQuery.colorbox.resize({width:'80%', height:'80%'})
-      }
-    }, 300);
-  }
 
   // Resize Colorbox when resizing window or changing mobile device orientation
   jQuery(window).resize(resizeColorBox);
@@ -154,6 +136,26 @@ function loadImages(max, galleryType) {
     threshold: 0,
   });
 }
+
+  /*//prevent scrolling
+  {
+    $(document)
+      .bind("cbox_open", function () {
+        $("body").css({ overflow: "hidden" });
+      })
+      .bind("cbox_closed", function () {
+        $("body").css({ overflow: "auto" });
+      });
+  }
+  var resizeTimer;
+  function resizeColorBox() {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (jQuery("#cboxOverlay").is(":visible")) {
+        jQuery.colorbox.resize()
+      }
+    }, 300);
+  }
 
 var mybutton = $("#myBtn");
 
@@ -187,4 +189,4 @@ mobileNav.click(function () {
   } else {
     x.className = "mainNav";
   }
-});
+}); */
