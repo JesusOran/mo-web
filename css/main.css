@@ -84,7 +84,7 @@ ul {
 
 @media screen and (max-width: 600px) {
   .mainNav li:not(:first-child):not(:last-child) {
-    display: none;
+    display: block;
   }
   .mainNav a.icon {
     float: right;
