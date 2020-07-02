@@ -114,17 +114,14 @@ function loadImages(max, galleryType) {
       current: false,
       scrolling: false,
       scalePhotos: true,
-      reposition:true,
+      reposition: true,
     });
     mainContent.append(colorBox.hide().fadeIn(500));
   }
   mainContent.children().last().remove();
+}
 
-  // Resize Colorbox when resizing window or changing mobile device orientation
-  jQuery(window).resize(resizeColorBox);
-  window.addEventListener("orientationchange", resizeColorBox, false);
-
-  jQuery("#colorbox").swipe({
+ /*$("#colorbox").swipe({
     //Generic swipe handler for all directions
     swipeLeft: function (event, direction, distance, duration, fingerCount) {
       jQuery.colorbox.next();
@@ -134,28 +131,30 @@ function loadImages(max, galleryType) {
     },
     //Default is 75px, set to 0 for demo so any distance triggers swipe
     threshold: 0,
-  });
-}
+  });*/
 
-  /*//prevent scrolling
-  {
-    $(document)
-      .bind("cbox_open", function () {
-        $("body").css({ overflow: "hidden" });
-      })
-      .bind("cbox_closed", function () {
-        $("body").css({ overflow: "auto" });
-      });
-  }
-  var resizeTimer;
-  function resizeColorBox() {
-    if (resizeTimer) clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (jQuery("#cboxOverlay").is(":visible")) {
-        jQuery.colorbox.resize()
-      }
-    }, 300);
-  }
+//prevent scrolling
+{
+  $(document)
+    .bind("cbox_open", function () {
+      $("body").css({ overflow: "hidden" });
+    })
+    .bind("cbox_closed", function () {
+      $("body").css({ overflow: "auto" });
+    });
+}
+var resizeTimer;
+function resizeColorBox() {
+  if (resizeTimer) clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    if (jQuery("#cboxOverlay").is(":visible")) {
+      jQuery.colorbox.resize();
+    }
+  }, 300);
+    // Resize Colorbox when resizing window or changing mobile device orientation
+  jQuery(window).resize(resizeColorBox);
+  window.addEventListener("orientationchange", resizeColorBox, false);
+}
 
 var mybutton = $("#myBtn");
 
@@ -189,4 +188,4 @@ mobileNav.click(function () {
   } else {
     x.className = "mainNav";
   }
-}); */
+}); 
