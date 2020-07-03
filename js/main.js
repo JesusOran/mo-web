@@ -48,47 +48,64 @@ $("#about").click(function () {
   mainContent.append(container.append(portrait).append(text));
 });
 
-$("#ceramic").click(function () {
-  clear();
-  loadImages(33, "ceramica");
-  document.documentElement.style.setProperty("--rowNum", 7);
-  document.documentElement.style.setProperty("--colNum", 5);
-});
-
-$("#water").click(function () {
-  clear();
-  loadImages(24, "suminagashiebru");
-  document.documentElement.style.setProperty("--rowNum", 5);
-  document.documentElement.style.setProperty("--colNum", 5);
-});
-
-$("#paper").click(function () {
-  clear();
-  loadImages(33, "papelycarton");
-  document.documentElement.style.setProperty("--rowNum", 7);
-  document.documentElement.style.setProperty("--colNum", 5);
-});
-
-$("#flowdraws").click(function () {
-  clear();
-  loadImages(24, "otros\\flowdraws");
-  document.documentElement.style.setProperty("--rowNum", 5);
-  document.documentElement.style.setProperty("--colNum", 5);
-});
-
-$("#logos").click(function () {
-  clear();
-  loadImages(6, "otros\\logotipos");
-  document.documentElement.style.setProperty("--rowNum", 2);
-  document.documentElement.style.setProperty("--colNum", 5);
-});
-
-$("#relieve").click(function () {
-  clear();
-  loadImages(4, "otros\\relieves");
-  document.documentElement.style.setProperty("--rowNum", 2);
-  document.documentElement.style.setProperty("--colNum", 5);
-});
+$(".mainNav > ul")
+  .children()
+  .click(function (event) {
+    var category = event.target.id;
+    var galleryLenght;
+    var row;
+    var col;
+    switch (category) {
+      case "ceramic":
+        category = "ceramica";
+        galleryLenght = 33;
+        row = 7;
+        col = 5;
+        break;
+      case "water":
+        category = "suminagashiebru";
+        galleryLenght = 24;
+        row = 5;
+        col = 5;
+        break;
+      case "paper":
+        category = "papelycarton";
+        galleryLenght = 33;
+        row = 7;
+        col = 5;
+        break;
+      case "flowdraws":
+        category = "otros\\flowdraws";
+        galleryLenght = 14;
+        row = 5;
+        col = 5;
+        break;
+      case "ilustraciones":
+        category = "otros\\ilustraciones";
+        galleryLenght = 9;
+        row = 5;
+        col = 5;
+        break;
+      case "logos":
+        category = "otros\\logotipos";
+        galleryLenght = 6;
+        row = 2;
+        col = 5;
+        break;
+      case "relieve":
+        category = "otros\\relieves";
+        galleryLenght = 4;
+        row = 2;
+        col = 5;
+        break;
+    }
+    if (category != "about" && category != "inclusive" && category != "") {
+      clear();
+      loadImages(galleryLenght, category);
+      document.documentElement.style.setProperty("--rowNum", row);
+      document.documentElement.style.setProperty("--colNum", col);
+    }
+  });
 
 function loadImages(max, galleryType) {
   var galleryTitle = $(
@@ -107,7 +124,7 @@ function loadImages(max, galleryType) {
       `<img class="galleryImage" src="img/gallery/${galleryType}/${i}.jpg" alt="${galleryCheck}${i}" loading="lazy" width="100px" height="100px">`
     );
     colorBox.append(image);
-    $(`.${galleryCheck}Gallery`).colorbox({
+    var cboxOptions = {
       rel: `${galleryCheck}Gallery`,
       maxWidth: "80%",
       maxHeight: "80%",
@@ -115,13 +132,27 @@ function loadImages(max, galleryType) {
       scrolling: false,
       scalePhotos: true,
       reposition: true,
-    });
+    };
+    $(`.${galleryCheck}Gallery`).colorbox(cboxOptions);
     mainContent.append(colorBox.hide().fadeIn(500));
   }
   mainContent.children().last().remove();
 }
 
- /*$("#colorbox").swipe({
+var resizeTimer;
+function resizeColorBox() {
+  if (resizeTimer) clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    if (jQuery("#cboxOverlay").is(":visible")) {
+      jQuery.colorbox.resize();
+    }
+  }, 300);
+}
+// Resize Colorbox when resizing window or changing mobile device orientation
+jQuery(window).resize(resizeColorBox);
+window.addEventListener("orientationchange", resizeColorBox, false);
+
+/*$("#colorbox").swipe({
     //Generic swipe handler for all directions
     swipeLeft: function (event, direction, distance, duration, fingerCount) {
       jQuery.colorbox.next();
@@ -134,27 +165,13 @@ function loadImages(max, galleryType) {
   });*/
 
 //prevent scrolling
-{
-  $(document)
-    .bind("cbox_open", function () {
-      $("body").css({ overflow: "hidden" });
-    })
-    .bind("cbox_closed", function () {
-      $("body").css({ overflow: "auto" });
-    });
-}
-var resizeTimer;
-function resizeColorBox() {
-  if (resizeTimer) clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function () {
-    if (jQuery("#cboxOverlay").is(":visible")) {
-      jQuery.colorbox.resize();
-    }
-  }, 300);
-    // Resize Colorbox when resizing window or changing mobile device orientation
-  jQuery(window).resize(resizeColorBox);
-  window.addEventListener("orientationchange", resizeColorBox, false);
-}
+$(document)
+  .bind("cbox_open", function () {
+    $("body").css({ overflow: "hidden" });
+  })
+  .bind("cbox_closed", function () {
+    $("body").css({ overflow: "auto" });
+  });
 
 var mybutton = $("#myBtn");
 
@@ -188,4 +205,4 @@ mobileNav.click(function () {
   } else {
     x.className = "mainNav";
   }
-}); 
+});
