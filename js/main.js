@@ -10,7 +10,6 @@ $("a").click(function (event) {
   $("a").css("color", "#ff3399");
   $("a").css("font-family", "Montserrat");
   $(event.target).css("color", "#990070");
-  $(event.target).css("font-family", "MontserratMedium");
 });
 
 var count = 1;
@@ -55,61 +54,94 @@ $(".mainNav > ul")
     var galleryLenght;
     var row;
     var col;
+    var title;
+    var text;
+    $("#main").removeClass("homePageGrid");
+    function hideMobileNav() {
+      var x = document.getElementById("navbar");
+      if (x.className === "mainNav") {
+        x.className += " responsive";
+      } else {
+        x.className = "mainNav";
+      }
+      window.scrollTo(400, 150);
+    }
     switch (category) {
       case "ceramic":
+        hideMobileNav();
         category = "ceramica";
         galleryLenght = 33;
         row = 7;
         col = 5;
+        title = "Cerámica"
+        text = ""
         break;
       case "water":
+        hideMobileNav();
         category = "suminagashiebru";
         galleryLenght = 24;
         row = 5;
         col = 5;
+        title = "Suminagashi y Ebru"
+        text = ""
         break;
       case "paper":
+        hideMobileNav();
         category = "papelycarton";
         galleryLenght = 33;
         row = 7;
         col = 5;
+        title = "Papel y cartón"
+        text = ""
         break;
       case "flowdraws":
+        hideMobileNav();
         category = "otros\\flowdraws";
         galleryLenght = 14;
         row = 5;
         col = 5;
+        title = "Flow Draws"
+        text = ""
         break;
       case "ilustraciones":
+        hideMobileNav();
         category = "otros\\ilustraciones";
         galleryLenght = 9;
         row = 5;
         col = 5;
+        title = "Ilustraciones"
+        text = ""
         break;
       case "logos":
+        hideMobileNav();
         category = "otros\\logotipos";
         galleryLenght = 6;
         row = 2;
         col = 5;
+        title = "Logotipos"
+        text = ""
         break;
       case "relieve":
+        hideMobileNav();
         category = "otros\\relieves";
         galleryLenght = 4;
         row = 2;
         col = 5;
+        title = "Relieves"
+        text = ""
         break;
     }
     if (category != "about" && category != "inclusive" && category != "") {
       clear();
-      loadImages(galleryLenght, category);
+      loadImages(galleryLenght, category, title, text);
       document.documentElement.style.setProperty("--rowNum", row);
       document.documentElement.style.setProperty("--colNum", col);
     }
   });
 
-function loadImages(max, galleryType) {
+function loadImages(max, galleryType, title, text) {
   var galleryTitle = $(
-    '<div class="galleryTitle"><h1 class="mainTitle">Cerámica</h1><p class="galleryInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>'
+    `<div class="galleryTitle"><h1 class="mainTitle">${title}</h1><p class="galleryInfo">${text}</p></div>`
   );
   mainContent.append(galleryTitle);
   var galleryCheck = galleryType;

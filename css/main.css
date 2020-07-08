@@ -80,20 +80,41 @@ ul {
 
 .mainNav .icon {
   display: none;
+  color: #ff3399;
+}
+
+.homePageGrid {
+  -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+}
+
+@media screen and (max-width: 375px) {
+  .mainNav li {
+    margin-left: 0;
+  }
+  .mainNav li a {
+    font-size: inherit;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  #main {
+  #main:not(.homePageGrid) {
     -ms-grid-columns: none !important;
         grid-template-columns: none !important;
+  }
+  #main {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
-  .mainNav li:not(:last-child) {
+  .mainNav li:not(:first-child):not(:last-child) {
     display: none;
   }
+  .mainNav li:first-child,
   .mainNav li:last-child {
-    margin-left: 0;
+    font-size: xx-large;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
   }
   .mainNav a.icon {
     float: left;
@@ -105,6 +126,9 @@ ul {
 @media screen and (max-width: 768px) {
   .mainNav.responsive {
     position: relative;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
   }
   .mainNav.responsive .icon {
     position: absolute;
@@ -185,7 +209,9 @@ ul {
 }
 
 .mainTitle {
+  padding-top: 15%;
   padding-bottom: 30px;
+  word-break: break-word;
 }
 
 #main {
