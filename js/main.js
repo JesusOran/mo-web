@@ -45,8 +45,8 @@ $(".mainNav > ul")
     var galleryLenght;
     var row;
     var col;
-    var title;
-    var text;
+    var title = "";
+    var text = "";
     $("#main").removeClass("homePageGrid");
     function hideMobileNav() {
       var x = document.getElementById("navbar");
@@ -64,8 +64,6 @@ $(".mainNav > ul")
         galleryLenght = 33;
         row = 7;
         col = 5;
-        title = "Cerámica";
-        text = "";
         break;
       case "water":
         hideMobileNav();
@@ -85,8 +83,6 @@ $(".mainNav > ul")
         galleryLenght = 33;
         row = 7;
         col = 5;
-        title = "Papel y Cartón";
-        text = "";
         break;
       case "flowdraws":
         hideMobileNav();
@@ -95,7 +91,8 @@ $(".mainNav > ul")
         row = 5;
         col = 5;
         title = "Flow Draws";
-        text = "";
+        text =
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         break;
       case "ilustraciones":
         hideMobileNav();
@@ -103,8 +100,6 @@ $(".mainNav > ul")
         galleryLenght = 9;
         row = 5;
         col = 5;
-        title = "Ilustraciones";
-        text = "";
         break;
       case "logos":
         hideMobileNav();
@@ -112,8 +107,6 @@ $(".mainNav > ul")
         galleryLenght = 6;
         row = 2;
         col = 5;
-        title = "Logotipos";
-        text = "";
         break;
       case "relieve":
         hideMobileNav();
@@ -122,7 +115,8 @@ $(".mainNav > ul")
         row = 2;
         col = 5;
         title = "Relieves";
-        text = "";
+        text =
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         break;
     }
     if (category != "about" && category != "inclusive" && category != "") {
@@ -192,10 +186,13 @@ function loadImages(max, galleryType, title, text) {
     "grid-template-columns",
     "repeat(auto-fit, minmax(10rem, 1fr))"
   );
-  var galleryTitle = $(
-    `<div class="galleryTitle"><h1 class="mainTitle">${title}</h1><p class="galleryInfo">${text}</p></div>`
-  );
-  mainContent.append(galleryTitle);
+  if (title != "" && text != "") {
+    var galleryTitle = $(
+      `<div class="galleryTitle"><h1 class="mainTitle">${title}</h1><p class="galleryInfo">${text}</p></div>`
+    );
+    mainContent.append(galleryTitle);
+  }
+
   var galleryCheck = galleryType;
   if (galleryType.includes("otros\\")) {
     galleryCheck = "otros";
