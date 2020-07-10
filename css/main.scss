@@ -13,6 +13,92 @@ ul {
   padding: 0;
 }
 
+video {
+  width: inherit;
+}
+
+#video1 {
+  order: 1;
+}
+
+#video2 {
+  order: 4;
+}
+
+#video3 {
+  order: 5;
+}
+
+#video4{
+  order: 8;
+}
+
+#textVideo1 {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  order: 2;
+}
+
+#textVideo2 {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  order: 3;
+}
+
+#textVideo3 {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  order: 6;
+}
+
+#textVideo4 {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  order: 7;
+}
+
+@media screen and (max-width: 1078px) {
+  #video1 {
+    order: 1;
+  }
+  
+  #video2 {
+    order: 3;
+  }
+  
+  #video3 {
+    order: 5;
+  }
+
+  #video4{
+    order: 7;
+  }
+  
+  #textVideo1 {
+    order: 2;
+  }
+  
+  #textVideo2 {
+    order: 4;
+  }
+
+  #textVideo3 {
+    order: 6;
+  }
+
+  #textVideo4 {
+    order: 8;
+  }
+
+
+}
+
+
+
 #title {
   display: flex;
   justify-content: center;
@@ -63,27 +149,34 @@ ul {
   }
 }
 
-.homePageGrid{
+.homePageGrid {
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
 }
 
+@media screen and (max-width: 320px) {
+  .homePageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+  }
+}
+
 @media screen and (max-width: 375px) {
+  .homePageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+  }
   .mainNav {
-    li{
+    li {
       margin-left: 0;
-      a{
-        font-size: inherit
+      a {
+        font-size: inherit;
       }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-  #main:not(.homePageGrid) {
-    grid-template-columns: none !important;
-  }
-  #main{
+@media screen and (max-width: 1078px) {
+  #main {
     padding-left: 0px !important;
+    grid-template-columns: none !important;
     padding-right: 0px !important;
   }
   .mainNav {
@@ -103,7 +196,7 @@ ul {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1078px) {
   .mainNav.responsive {
     position: relative;
     justify-content: flex-start !important;
@@ -145,17 +238,16 @@ ul {
 .galleryTitle {
   color: #696969;
   background: #e4e1da;
-  font-size: 3em;
   text-align: center;
   grid-row: 1 / span 3;
   grid-column: 1 / span 3;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  word-break: break-all;
+  word-break: break-word;
   text-align: start;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .galleryInfo {
@@ -166,6 +258,12 @@ ul {
   padding-top: 15%;
   padding-bottom: 30px;
   word-break: break-word;
+  text-align: center;
+}
+
+.aboutText {
+  display: flex;
+  flex-flow: column wrap;
 }
 
 #main {
@@ -246,6 +344,7 @@ img {
 
 .container {
   text-align: justify;
+  margin-top: 20px;
   #portrait {
     border-radius: 360px;
     height: 80%;

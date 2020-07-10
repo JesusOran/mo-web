@@ -13,6 +13,141 @@ ul {
   padding: 0;
 }
 
+video {
+  width: inherit;
+}
+
+#video1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#video2 {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+#video3 {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
+#video4 {
+  -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+          order: 8;
+}
+
+#textVideo1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+#textVideo2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+#textVideo3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
+}
+
+#textVideo4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
+}
+
+@media screen and (max-width: 1078px) {
+  #video1 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  #video2 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  #video3 {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  #video4 {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+  #textVideo1 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #textVideo2 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  #textVideo3 {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  #textVideo4 {
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+}
+
 #title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,7 +223,18 @@ ul {
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
 }
 
+@media screen and (max-width: 320px) {
+  .homePageGrid {
+    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+  }
+}
+
 @media screen and (max-width: 375px) {
+  .homePageGrid {
+    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+  }
   .mainNav li {
     margin-left: 0;
   }
@@ -97,13 +243,11 @@ ul {
   }
 }
 
-@media screen and (max-width: 768px) {
-  #main:not(.homePageGrid) {
-    -ms-grid-columns: none !important;
-        grid-template-columns: none !important;
-  }
+@media screen and (max-width: 1078px) {
   #main {
     padding-left: 0px !important;
+    -ms-grid-columns: none !important;
+        grid-template-columns: none !important;
     padding-right: 0px !important;
   }
   .mainNav li:not(:first-child):not(:last-child) {
@@ -123,7 +267,7 @@ ul {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1078px) {
   .mainNav.responsive {
     position: relative;
     -webkit-box-pack: start !important;
@@ -180,7 +324,6 @@ ul {
 .galleryTitle {
   color: #696969;
   background: #e4e1da;
-  font-size: 3em;
   text-align: center;
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
@@ -198,10 +341,10 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  word-break: break-all;
+  word-break: break-word;
   text-align: start;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .galleryInfo {
@@ -212,6 +355,17 @@ ul {
   padding-top: 15%;
   padding-bottom: 30px;
   word-break: break-word;
+  text-align: center;
+}
+
+.aboutText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
 }
 
 #main {
@@ -319,6 +473,7 @@ img {
 
 .container {
   text-align: justify;
+  margin-top: 20px;
 }
 
 .container #portrait {
