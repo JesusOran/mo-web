@@ -300,10 +300,6 @@ video {
 }
 
 @media only screen and (max-width: 375px) {
-  .homePageGrid {
-    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
-  }
   .mainNav li {
     margin-left: 0;
   }
