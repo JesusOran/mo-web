@@ -211,12 +211,18 @@ video {
 }
 
 @media only screen and (max-width: 425px) {
+  .homePageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
+  }
   #main:not(.inclusiveGrid):not(.homePageGrid) {
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
   }
 }
 
 @media only screen and (max-width: 375px) {
+  .homePageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
+  }
   .mainNav {
     li {
       margin-left: 0;

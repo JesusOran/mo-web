@@ -293,6 +293,10 @@ video {
 }
 
 @media only screen and (max-width: 425px) {
+  .homePageGrid {
+    -ms-grid-columns: (minmax(13rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
+  }
   #main:not(.inclusiveGrid):not(.homePageGrid) {
     -ms-grid-columns: (minmax(6rem, 1fr))[auto-fit] !important;
         grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
@@ -300,6 +304,10 @@ video {
 }
 
 @media only screen and (max-width: 375px) {
+  .homePageGrid {
+    -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
+  }
   .mainNav li {
     margin-left: 0;
   }
