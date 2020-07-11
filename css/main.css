@@ -163,7 +163,7 @@ video {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("../img/assests/fondosuminagashi.jpg");
+  background-image: url("../img/assests/portadamod.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -305,6 +305,13 @@ video {
   }
   .mainNav li a {
     font-size: inherit;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #main:not(.inclusiveGrid):not(.homePageGrid) {
+    -ms-grid-columns: (minmax(6rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
   }
 }
 

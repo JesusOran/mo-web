@@ -103,7 +103,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/assests/fondosuminagashi.jpg");
+  background-image: url("../img/assests/portadamod.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -228,6 +228,13 @@ video {
     }
   }
 }
+
+@media only screen and (max-width: 425px){
+  #main:not(.inclusiveGrid):not(.homePageGrid) {
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important; 
+}
+}
+
 
 #myBtn {
   font-size: larger;
