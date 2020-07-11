@@ -42,12 +42,15 @@ $(".mainNav > ul")
   .children()
   .click(function (event) {
     var category = event.target.id;
+    console.log(category);
     var galleryLenght;
     var row;
     var col;
     var title = "";
     var text = "";
-    $("#main").removeClass("homePageGrid");
+    if (category != ""){
+      $("#main").removeClass("homePageGrid");
+    }
     function hideMobileNav() {
       var x = document.getElementById("navbar");
       if (x.className === "mainNav") {
