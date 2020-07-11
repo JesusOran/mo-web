@@ -245,8 +245,8 @@ video {
     padding-right: 0px !important;
   }
   #main:not(.inclusiveGrid):not(.homePageGrid) {
-    -ms-grid-columns: (minmax(5rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr)) !important;
+    -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
   }
   .mainNav {
     margin: 0px;
@@ -292,10 +292,10 @@ video {
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .homePageGrid {
-    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+@media only screen and (max-width: 425px) {
+  #main:not(.inclusiveGrid):not(.homePageGrid) {
+    -ms-grid-columns: (minmax(6rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
   }
 }
 
@@ -308,10 +308,10 @@ video {
   }
 }
 
-@media only screen and (max-width: 425px) {
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
-    -ms-grid-columns: (minmax(6rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
+@media only screen and (max-width: 320px) {
+  .homePageGrid {
+    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
   }
 }
 

@@ -154,12 +154,10 @@ video {
 }
 
 @media only screen and (max-width: 1078px) {
-  .homePageGrid{
+  .homePageGrid {
     grid-template-columns: none !important;
   }
 }
-
-
 
 @media only screen and (max-width: 935px) {
   .inclusiveGrid {
@@ -171,7 +169,7 @@ video {
     padding-right: 0px !important;
   }
   #main:not(.inclusiveGrid):not(.homePageGrid) {
-    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
   }
 
   .mainNav {
@@ -212,9 +210,9 @@ video {
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .homePageGrid {
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+@media only screen and (max-width: 425px) {
+  #main:not(.inclusiveGrid):not(.homePageGrid) {
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
   }
 }
 
@@ -229,11 +227,13 @@ video {
   }
 }
 
-@media only screen and (max-width: 425px){
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
-    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important; 
+@media only screen and (max-width: 320px) {
+  .homePageGrid {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
+  }
 }
-}
+
+
 
 
 #myBtn {
