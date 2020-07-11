@@ -126,7 +126,6 @@ $(".mainNav > ul")
       document.documentElement.style.setProperty("--colNum", col);
     } else if (category === "about") {
       clear();
-      var container = $('<div class="container">');
       //var portrait = $('<img id="portrait" src="img/1.jpg">');
       var text = $(
         "<div class='aboutText'><p>Acerca de mí podría decir que exploro caminos para volver a casa, y que he decidido con esta web reunir en un mismo espacio, algunas de mis experiencias, ellas mismas se han ido transformando, incluso lo harán ante tu propia mirada, por tanto la casa que busco también se transforma a cada paso que doy, la casa soy yo.</p>" +
@@ -136,9 +135,9 @@ $(".mainNav > ul")
           "<p>A partir de entonces  me he dedicado a realizar y ejecutar proyectos de arte inclusivo donde he interactuado con colectivos diversos, usando técnicas artísticas accesibles para todos y la expresión artística como agente de conexión y transformación.</p>" +
           "<p>Actualmente sigo explorando caminos, el más reciente es el de la cerámica artística, a través de ella pretendo contribuir a la divulgación y desarrollo de procesos creativos más acordes con los principios de sostenibilidad, y por supuesto seguir aportando mi granito de arena por la inclusión y respeto a la diversidad.</p>"
       );
-      mainContent.append(container.append(text));
+      mainContent.append(text);
     } else if (category === "inclusive") {
-      mainContent.css("grid-template-columns", "repeat(2, auto)");
+      mainContent.addClass("inclusiveGrid");
       clear();
       var video1 = $(
         "<video id='video1' controls='true' src='img/gallery/arteinclusivo/PROYECTOPINTANDOSOBREELAGUA/PINTANDOSOBRE.mp4'>"
@@ -182,6 +181,9 @@ $(".mainNav > ul")
   });
 
 function loadImages(max, galleryType, title, text) {
+  if (mainContent.hasClass("inclusiveGrid")) {
+    mainContent.removeClass("inclusiveGrid");
+  }
   mainContent.css(
     "grid-template-columns",
     "repeat(auto-fit, minmax(10rem, 1fr))"

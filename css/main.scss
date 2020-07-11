@@ -13,6 +13,10 @@ ul {
   padding: 0;
 }
 
+.inclusiveGrid {
+  grid-template-columns: repeat(2, auto) !important;
+}
+
 video {
   width: inherit;
 }
@@ -29,7 +33,7 @@ video {
   order: 5;
 }
 
-#video4{
+#video4 {
   order: 8;
 }
 
@@ -65,23 +69,23 @@ video {
   #video1 {
     order: 1;
   }
-  
+
   #video2 {
     order: 3;
   }
-  
+
   #video3 {
     order: 5;
   }
 
-  #video4{
+  #video4 {
     order: 7;
   }
-  
+
   #textVideo1 {
     order: 2;
   }
-  
+
   #textVideo2 {
     order: 4;
   }
@@ -93,11 +97,7 @@ video {
   #textVideo4 {
     order: 8;
   }
-
-
 }
-
-
 
 #title {
   display: flex;
@@ -132,7 +132,7 @@ video {
     float: left;
     display: block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 5px;
     text-decoration: none;
     font-size: 17px;
     a {
@@ -153,13 +153,57 @@ video {
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
 }
 
-@media screen and (max-width: 320px) {
+@media only screen and (max-width: 935px) {
+  #main {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr)) !important;
+  }
+  .mainNav {
+    margin: 0px;
+    justify-content: flex-end;
+    li:not(:last-child) {
+      display: none;
+    }
+    li:first-child,
+    li:last-child {
+      font-size: xx-large;
+      justify-content: start !important;
+    }
+    a.icon {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 935px) {
+  .mainNav.responsive {
+    position: relative;
+    justify-content: flex-start !important;
+    .icon {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+    li {
+      float: none;
+      display: block !important;
+      text-align: left;
+      &:active {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
   .homePageGrid {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) {
   .homePageGrid {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
   }
@@ -173,50 +217,11 @@ video {
   }
 }
 
-@media screen and (max-width: 1078px) {
-  #main {
-    padding-left: 0px !important;
-    grid-template-columns: none !important;
-    padding-right: 0px !important;
-  }
-  .mainNav {
-    li:not(:first-child):not(:last-child) {
-      display: none;
-    }
-    li:first-child,
-    li:last-child {
-      font-size: xx-large;
-      justify-content: start !important;
-    }
-    a.icon {
-      float: left;
-      display: block;
-      margin-left: 0;
-    }
-  }
-}
-
-@media screen and (max-width: 1078px) {
-  .mainNav.responsive {
-    position: relative;
-    justify-content: flex-start !important;
-    .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    li {
-      float: none;
-      display: block !important;
-      text-align: left;
-      &:active {
-        display: none;
-      }
-    }
-  }
-}
-
 #myBtn {
+  font-size: larger;
+  opacity: 0.6;
+  width: 30px;
+  height: 30px;
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
@@ -227,8 +232,6 @@ video {
   background-color: #696969; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  font-size: 30px; /* Increase font size */
 }
 
 #myBtn:hover {
@@ -264,6 +267,7 @@ video {
 .aboutText {
   display: flex;
   flex-flow: column wrap;
+  text-align: justify;
 }
 
 #main {
@@ -360,6 +364,7 @@ img {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  font-size: 15px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -378,7 +383,11 @@ img {
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  text-align: initial;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown 
