@@ -508,6 +508,8 @@ video {
   visibility: visible;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .galleryImage {

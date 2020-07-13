@@ -372,6 +372,7 @@ video {
     &:hover:not(.item3) .category {
       visibility: visible;
       backdrop-filter: blur(3px);
+      box-sizing: border-box;
     }
   }
 }
