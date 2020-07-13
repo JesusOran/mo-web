@@ -150,6 +150,8 @@ video {
 }
 
 .homePageGrid {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
 }
 
@@ -239,9 +241,6 @@ video {
   }
 }
 
-
-
-
 #myBtn {
   font-size: larger;
   opacity: 0.6;
@@ -298,8 +297,8 @@ video {
 #main {
   width: 100%;
   height: auto;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 20%;
+  padding-right: 20%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   row-gap: 15px;

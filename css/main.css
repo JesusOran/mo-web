@@ -224,6 +224,8 @@ video {
 }
 
 .homePageGrid {
+  padding-left: 10% !important;
+  padding-right: 10% !important;
   -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
 }
@@ -406,8 +408,8 @@ video {
 #main {
   width: 100%;
   height: auto;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 20%;
+  padding-right: 20%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];

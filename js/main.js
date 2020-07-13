@@ -42,7 +42,6 @@ $(".mainNav > ul")
   .children()
   .click(function (event) {
     var category = event.target.id;
-    console.log(category);
     var galleryLenght;
     var row;
     var col;
@@ -62,14 +61,12 @@ $(".mainNav > ul")
     }
     switch (category) {
       case "ceramic":
-        hideMobileNav();
         category = "ceramica";
         galleryLenght = 33;
         row = 7;
         col = 5;
         break;
       case "water":
-        hideMobileNav();
         category = "suminagashiebru";
         galleryLenght = 24;
         row = 5;
@@ -81,14 +78,12 @@ $(".mainNav > ul")
           "<p>En algunos de estos trabajos se ha experimentado con intervención digital, partiendo de las imágenes recogidas del agua.</p>";
         break;
       case "paper":
-        hideMobileNav();
         category = "papelycarton";
-        galleryLenght = 33;
+        galleryLenght = 32;
         row = 7;
         col = 5;
         break;
       case "flowdraws":
-        hideMobileNav();
         category = "otros\\flowdraws";
         galleryLenght = 14;
         row = 5;
@@ -98,21 +93,18 @@ $(".mainNav > ul")
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         break;
       case "ilustraciones":
-        hideMobileNav();
         category = "otros\\ilustraciones";
         galleryLenght = 9;
         row = 5;
         col = 5;
         break;
       case "logos":
-        hideMobileNav();
         category = "otros\\logotipos";
         galleryLenght = 6;
         row = 2;
         col = 5;
         break;
       case "relieve":
-        hideMobileNav();
         category = "otros\\relieves";
         galleryLenght = 4;
         row = 2;
@@ -123,11 +115,13 @@ $(".mainNav > ul")
         break;
     }
     if (category != "about" && category != "inclusive" && category != "") {
+      hideMobileNav();
       clear();
       loadImages(galleryLenght, category, title, text);
       document.documentElement.style.setProperty("--rowNum", row);
       document.documentElement.style.setProperty("--colNum", col);
     } else if (category === "about") {
+      hideMobileNav();
       clear();
       //var portrait = $('<img id="portrait" src="img/1.jpg">');
       var text = $(
@@ -140,6 +134,7 @@ $(".mainNav > ul")
       );
       mainContent.append(text);
     } else if (category === "inclusive") {
+      hideMobileNav();
       mainContent.addClass("inclusiveGrid");
       clear();
       var video1 = $(
