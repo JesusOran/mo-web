@@ -118,7 +118,7 @@ video {
 }
 
 .mainNav {
-  margin: 30px;
+  margin: 25px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -167,8 +167,8 @@ video {
   }
 
   #main {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
   #main:not(.inclusiveGrid):not(.homePageGrid) {
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
