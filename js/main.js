@@ -135,7 +135,7 @@ $(".mainNav > ul")
         "<video id='video1' controls='true' src='img/gallery/arteinclusivo/PROYECTOPINTANDOSOBREELAGUA/PINTANDOSOBRE.mp4'>"
       );
       var video2 = $(
-        "<video id='video2' controls='true' src='img/gallery/arteinclusivo/PROYECTOPINTANDOSOBREELAGUA/pintandosobreelagua.mp4'>"
+        "<video id='video2' controls='true' src='img/gallery/arteinclusivo/PROYECTOPINTANDOSOBREELAGUA/exposicionpintando.mp4'>"
       );
       var video3 = $(
         "<video id='video3' controls='true' src='img/gallery/arteinclusivo/AULASENCLAVE/AULASENCLAVE.mp4'>"
