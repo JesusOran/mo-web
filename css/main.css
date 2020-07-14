@@ -17,6 +17,11 @@ ul {
 .inclusiveGrid {
   -ms-grid-columns: (auto)[2] !important;
       grid-template-columns: repeat(2, auto) !important;
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+  -webkit-column-gap: 5% !important;
+          column-gap: 5% !important;
+  row-gap: 20px !important;
 }
 
 video {
@@ -27,24 +32,36 @@ video {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #video2 {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #video3 {
   -webkit-box-ordinal-group: 6;
       -ms-flex-order: 5;
           order: 5;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #video4 {
   -webkit-box-ordinal-group: 9;
       -ms-flex-order: 8;
           order: 8;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #textVideo1 {
@@ -61,6 +78,12 @@ video {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+#textVideo1 h1 {
+  margin: 0;
 }
 
 #textVideo2 {
@@ -177,6 +200,14 @@ video {
   width: 500px;
   max-width: 100%;
   height: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+#title a:hover,
+#title #firma:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .mainNav {
@@ -335,10 +366,6 @@ video {
   #title {
     background-image: url("../img/assests/375p.jpg");
   }
-  .homePageGrid {
-    -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
-  }
   .mainNav li {
     margin-left: 0;
   }
@@ -354,10 +381,6 @@ video {
   }
   #title {
     background-image: url("../img/assests/320p.jpg");
-  }
-  .homePageGrid {
-    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
   }
 }
 
@@ -441,6 +464,7 @@ video {
 }
 
 #main {
+  overflow-x: hidden;
   width: 100%;
   height: auto;
   padding-left: 20%;
@@ -582,6 +606,8 @@ img {
 .dropdown {
   position: relative;
   display: inline-block;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 /* Dropdown Content (Hidden by Default) */

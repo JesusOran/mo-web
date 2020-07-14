@@ -47,7 +47,7 @@ $(".mainNav > ul")
     var col;
     var title = "";
     var text = "";
-    if (category != ""){
+    if (category != "") {
       $("#main").removeClass("homePageGrid");
     }
     function hideMobileNav() {
@@ -88,9 +88,6 @@ $(".mainNav > ul")
         galleryLenght = 14;
         row = 5;
         col = 5;
-        title = "Flow Draws";
-        text =
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         break;
       case "ilustraciones":
         category = "otros\\ilustraciones";
@@ -109,9 +106,6 @@ $(".mainNav > ul")
         galleryLenght = 4;
         row = 2;
         col = 5;
-        title = "Relieves";
-        text =
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         break;
     }
     if (category != "about" && category != "inclusive" && category != "") {
@@ -151,20 +145,21 @@ $(".mainNav > ul")
       );
       //var portrait = $('<img id="portrait" src="img/1.jpg">');
       var text1 = $(
-        "<div id='textVideo1'><p>Acerca de mí podría decir que exploro caminos para volver a casa, y que he decidido con esta web reunir en un mismo espacio, algunas de mis experiencias, ellas mismas se han ido transformando, incluso lo harán ante tu propia mirada, por tanto la casa que busco también se transforma a cada paso que doy, la casa soy yo.</p>" +
-          "<p>Me he formado como Diseñadora Industrial y Técnico Superior en Artes Plásticas y Diseño en la especialidad de Cerámica Artística. Durante muchos años trabajé fundamentalmente en el ámbito del Diseño Interior, esto me permitió desarrollar habilidades para proyectar y ofrecer soluciones creativas, ademas  de otras comunicativas, organizativas y de gestión.</p>"
+        "<div id='textVideo1'><h1>Pintando Sobre el Agua</h1><p>Proyecto realizado para los alumnos del Taller de Artes Plásticas Giro-Arte, el taller está dirigido al colectivo de personas con discapacidad intelectual y tiene el objetivo de promover el desarrollo integral del alumnado, impulsando sus capacidades creativas y facilitando el acceso a la cultura y el arte como medio de expresión e inclusión social, poniendo en valor sus capacidades y promoviendo su rol activo en la sociedad</p>" +
+          "<p>Con este proyecto experimentamos las posibilidades expresivas que tienen las técnicas del Suminagashi y el Ebru, además de aportar a los participantes beneficios personales tales como</p>" +
+          "<ul style='margin-left: 5%;'><li>Aprendizaje por la relación causa y efecto.</li><li>Implicación positiva de la persona aun cuando comience con un estado de apatía</li><li>Aumento de la concentración y la relajación.</li><li>Desarrollo de la paciencia.</li><li>Mejora de la coordinación óculo-manual.</li><li>Control de los movimientos del cuerpo y la movilidad.</li><li>Estimulación de asociaciones libres simbólicas que promueven a la reflexión.</li></ul>"
       );
       var text2 = $(
-        "<div id='textVideo2'><p>Acerca de mí podría decir que exploro caminos para volver a casa, y que he decidido con esta web reunir en un mismo espacio, algunas de mis experiencias, ellas mismas se han ido transformando, incluso lo harán ante tu propia mirada, por tanto la casa que busco también se transforma a cada paso que doy, la casa soy yo.</p>" +
-          "<p>Me he formado como Diseñadora Industrial y Técnico Superior en Artes Plásticas y Diseño en la especialidad de Cerámica Artística. Durante muchos años trabajé fundamentalmente en el ámbito del Diseño Interior, esto me permitió desarrollar habilidades para proyectar y ofrecer soluciones creativas, ademas  de otras comunicativas, organizativas y de gestión.</p>"
+        "<div id='textVideo2'><p><b>“Pintando sobre el agua”</b> contó con la participación de 24 personas, consiguiendo excelentes resultados tanto a nivel expresivo como en su desarrollo personal, las obras ejecutadas durante el proyecto se expusieron en el museo de historia y antropología de Tenerife</p>"
       );
       var text3 = $(
-        "<div id='textVideo3'><p>Acerca de mí podría decir que exploro caminos para volver a casa, y que he decidido con esta web reunir en un mismo espacio, algunas de mis experiencias, ellas mismas se han ido transformando, incluso lo harán ante tu propia mirada, por tanto la casa que busco también se transforma a cada paso que doy, la casa soy yo.</p>" +
-          "<p>Me he formado como Diseñadora Industrial y Técnico Superior en Artes Plásticas y Diseño en la especialidad de Cerámica Artística. Durante muchos años trabajé fundamentalmente en el ámbito del Diseño Interior, esto me permitió desarrollar habilidades para proyectar y ofrecer soluciones creativas, ademas  de otras comunicativas, organizativas y de gestión.</p>"
+        "<div id='textVideo3'><h1>Aulas Enclave</h1><p>Talleres de grabado y estampación, adaptados para alumnos con diversidad funcional provenientes de aulas enclave de diferentes institutos de Tenerife. Estos talleres fueron desarrollados en las instalaciones del  Centro municipal de Arte Gráfico de Santa Cruz de Tenerife. En la sala de exposiciones de este centro se realizó una exposición titulada “Sin Etiqueta”, que contó con una selección de trabajos ejecutados en estos talleres.</p>"
       );
       var text4 = $(
-        "<div id='textVideo4'><p>Acerca de mí podría decir que exploro caminos para volver a casa, y que he decidido con esta web reunir en un mismo espacio, algunas de mis experiencias, ellas mismas se han ido transformando, incluso lo harán ante tu propia mirada, por tanto la casa que busco también se transforma a cada paso que doy, la casa soy yo.</p>" +
-          "<p>Me he formado como Diseñadora Industrial y Técnico Superior en Artes Plásticas y Diseño en la especialidad de Cerámica Artística. Durante muchos años trabajé fundamentalmente en el ámbito del Diseño Interior, esto me permitió desarrollar habilidades para proyectar y ofrecer soluciones creativas, ademas  de otras comunicativas, organizativas y de gestión.</p>"
+        "<div id='textVideo4'><h1>Giro Arte Itinerante</h1><p>En 2018, con motivo de su 25 aniversario, la empresa Sinpromi diseñó un programa de actividades desde todas su áreas, y en el ámbito cultural llevaron a cabo el proyecto Giro-Arte itinerante “Arte Inclusivo”, cuyo objetivo principal era promover la normalización e inclusión social del colectivo de personas con discapacidad intelectual, dándoles visibilidad y voz, impartiendo talleres artísticos itinerantes, donde los alumnos del Taller Giro-Arte ejercieron de monitores bajo la dirección de un formador.</p>" +
+          "<p>Estos talleres se dirigieron a personas de diversos colectivos, sexo, edad y condición social. Las técnicas escogidas fueron el Suminagashi y Ebru, en las que los alumnos tenían experiencia por el proyecto “Pintando sobre el agua”, y la empresa contó conmigo para realizar con ellos estos talleres itinerantes.</p>"+
+          "<p>Esta interacción inclusiva tuvo una repercusión muy positiva tanto para quienes la recibieron, como para los que impartimos, se compartieron conocimientos, experiencias y realidades de cada colectivo, facilitandose el acercamiento, empatía y comunicación entre todos. Los Alumnos mejoraron su autoconcepto y motivación, y han adquirido conciencia de que las personas con diversidad funcional pueden asumir el compromiso de ayudar y aportar valores a la sociedad. El leit motiv que nos acompañó fue “Sumamos Capacidades”, todos las tenemos y debemos hacerlas visibles, así como también saber reconocer nuestros límites y siempre respetar los de los demás.</p>"+
+          "<p>En 2018 se realizaron 48 talleres, que alcanzaron a 858 personas en diferentes zonas de la isla de Tenerife. Debido a la buena acogida  se realizó una nueva edición en 2019, esta vez con un alcance de 906 personas en 50 talleres.</p>"
       );
       mainContent
         .append(video1)
@@ -182,10 +177,6 @@ function loadImages(max, galleryType, title, text) {
   if (mainContent.hasClass("inclusiveGrid")) {
     mainContent.removeClass("inclusiveGrid");
   }
-  mainContent.css(
-    "grid-template-columns",
-    "repeat(auto-fit, minmax(10rem, 1fr))"
-  );
   if (title != "" && text != "") {
     var galleryTitle = $(
       `<div class="galleryTitle"><h1 class="mainTitle">${title}</h1><p class="galleryInfo">${text}</p></div>`
@@ -232,18 +223,6 @@ function resizeColorBox() {
 // Resize Colorbox when resizing window or changing mobile device orientation
 jQuery(window).resize(resizeColorBox);
 window.addEventListener("orientationchange", resizeColorBox, false);
-
-/*$("#colorbox").swipe({
-    //Generic swipe handler for all directions
-    swipeLeft: function (event, direction, distance, duration, fingerCount) {
-      jQuery.colorbox.next();
-    },
-    swipeRight: function (event, direction, distance, duration, fingerCount) {
-      jQuery.colorbox.prev();
-    },
-    //Default is 75px, set to 0 for demo so any distance triggers swipe
-    threshold: 0,
-  });*/
 
 //prevent scrolling
 $(document)
