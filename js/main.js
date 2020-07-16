@@ -48,7 +48,14 @@ $(".mainNav > ul")
     var title = "";
     var text = "";
     if (category != "") {
-      $("#main").removeClass("homePageGrid");
+      $(document).ready(function () {
+        $("body,html").animate(
+          {
+            scrollTop: mainContent.offset().top - 50,
+          },
+          1500 //speed
+        );
+      });
     }
     function hideMobileNav() {
       var x = document.getElementById("navbar");
@@ -57,7 +64,6 @@ $(".mainNav > ul")
       } else {
         x.className = "mainNav";
       }
-      window.scrollTo(400, 150);
     }
     switch (category) {
       case "ceramic":
@@ -157,8 +163,8 @@ $(".mainNav > ul")
       );
       var text4 = $(
         "<div id='textVideo4'><h1>Giro Arte Itinerante</h1><p>En 2018, con motivo de su 25 aniversario, la empresa Sinpromi diseñó un programa de actividades desde todas su áreas, y en el ámbito cultural llevaron a cabo el proyecto Giro-Arte itinerante “Arte Inclusivo”, cuyo objetivo principal era promover la normalización e inclusión social del colectivo de personas con discapacidad intelectual, dándoles visibilidad y voz, impartiendo talleres artísticos itinerantes, donde los alumnos del Taller Giro-Arte ejercieron de monitores bajo la dirección de un formador.</p>" +
-          "<p>Estos talleres se dirigieron a personas de diversos colectivos, sexo, edad y condición social. Las técnicas escogidas fueron el Suminagashi y Ebru, en las que los alumnos tenían experiencia por el proyecto “Pintando sobre el agua”, y la empresa contó conmigo para realizar con ellos estos talleres itinerantes.</p>"+
-          "<p>Esta interacción inclusiva tuvo una repercusión muy positiva tanto para quienes la recibieron, como para los que impartimos, se compartieron conocimientos, experiencias y realidades de cada colectivo, facilitandose el acercamiento, empatía y comunicación entre todos. Los Alumnos mejoraron su autoconcepto y motivación, y han adquirido conciencia de que las personas con diversidad funcional pueden asumir el compromiso de ayudar y aportar valores a la sociedad. El leit motiv que nos acompañó fue “Sumamos Capacidades”, todos las tenemos y debemos hacerlas visibles, así como también saber reconocer nuestros límites y siempre respetar los de los demás.</p>"+
+          "<p>Estos talleres se dirigieron a personas de diversos colectivos, sexo, edad y condición social. Las técnicas escogidas fueron el Suminagashi y Ebru, en las que los alumnos tenían experiencia por el proyecto “Pintando sobre el agua”, y la empresa contó conmigo para realizar con ellos estos talleres itinerantes.</p>" +
+          "<p>Esta interacción inclusiva tuvo una repercusión muy positiva tanto para quienes la recibieron, como para los que impartimos, se compartieron conocimientos, experiencias y realidades de cada colectivo, facilitandose el acercamiento, empatía y comunicación entre todos. Los Alumnos mejoraron su autoconcepto y motivación, y han adquirido conciencia de que las personas con diversidad funcional pueden asumir el compromiso de ayudar y aportar valores a la sociedad. El leit motiv que nos acompañó fue “Sumamos Capacidades”, todos las tenemos y debemos hacerlas visibles, así como también saber reconocer nuestros límites y siempre respetar los de los demás.</p>" +
           "<p>En 2018 se realizaron 48 talleres, que alcanzaron a 858 personas en diferentes zonas de la isla de Tenerife. Debido a la buena acogida  se realizó una nueva edición en 2019, esta vez con un alcance de 906 personas en 50 talleres.</p>"
       );
       mainContent
@@ -233,7 +239,7 @@ $(document)
     $("body").css({ overflow: "auto" });
   });
 
-var mybutton = $("#myBtn");
+var mybutton = $("#goTopButton");
 
 // When the user scrolls down 50px from the top of the document, show the button
 window.onscroll = function () {

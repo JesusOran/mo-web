@@ -11,7 +11,7 @@ div,
 ul {
   margin: 0;
   padding: 0;
-  font-family: Montserrat;
+  font-family: Montserrat !important;
 }
 
 .inclusiveGrid {
@@ -113,6 +113,7 @@ video {
 }
 
 #title {
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,15 +122,14 @@ video {
   background-repeat: no-repeat;
   background-position: top;
   width: 100%;
-  height: 300px;
-  a,
+  height: 450px;
   #firma {
-    width: 500px;
+    width: 700px;
     max-width: 100%;
     height: 100%;
     transition: all 1s ease-in-out;
     &:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
   }
 }
@@ -166,19 +166,9 @@ video {
   }
 }
 
-.homePageGrid {
-  padding-left: 10% !important;
-  padding-right: 10% !important;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
-}
-
 @media only screen and (max-width: 1078px) {
   .mainTitle {
     padding-top: 10%;
-  }
-
-  .homePageGrid {
-    grid-template-columns: none !important;
   }
 
   #title {
@@ -204,7 +194,7 @@ video {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
+  #main:not(.inclusiveGrid) {
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
   }
 
@@ -249,24 +239,24 @@ video {
 @media only screen and (max-width: 768px) {
   #title {
     background-image: url("../img/assests/768p.jpg");
+    height: 450px;
   }
 }
 
 @media only screen and (max-width: 425px) {
   #title {
-    background-image: url("../img/assests/425p.jpg");
+    background-image: url("../img/assests/425.jpg");
+    height: 300px;
   }
-  .homePageGrid {
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
-  }
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
+  #main:not(.inclusiveGrid) {
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
   }
 }
 
 @media only screen and (max-width: 375px) {
   #title {
-    background-image: url("../img/assests/375p.jpg");
+    background-image: url("../img/assests/375.jpg");
+    height: 300px;
   }
   .mainNav {
     li {
@@ -279,15 +269,17 @@ video {
 }
 
 @media only screen and (max-width: 320px) {
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
+  #main:not(.inclusiveGrid) {
     grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)) !important;
   }
   #title {
-    background-image: url("../img/assests/320p.jpg");
+    background-image: url("../img/assests/320.jpg");
+    height: 300px;
   }
 }
 
-#myBtn {
+#goTopButton {
+  border-radius: 360px;
   font-size: larger;
   opacity: 0.6;
   width: 30px;
@@ -299,13 +291,13 @@ video {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #696969; /* Set a background color */
+  background-color: #ff3399; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
 }
 
-#myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+#goTopButton:hover {
+  background-color: #fc71b6; /* Add a dark-grey background on hover */
 }
 
 .galleryTitle {
@@ -351,41 +343,6 @@ video {
   column-gap: 20px;
   justify-content: center;
   box-sizing: border-box;
-  .item1 {
-    background-image: url("../img/gallery/ceramica/20.jpg");
-  }
-  .item2 {
-    background-image: url("../img/gallery/ceramica/21.jpg");
-  }
-  .item3 {
-    background-image: url("../img/gallery/ceramica/22.jpg");
-  }
-  .item4 {
-    background-image: url("../img/gallery/ceramica/23.jpg");
-  }
-  .item5 {
-    background-image: url("../img/gallery/ceramica/24.jpg");
-  }
-  div {
-    display: flex;
-    justify-content: center;
-    background-size: cover;
-    background-position-x: center;
-    .category {
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 150px;
-      width: 100%;
-      visibility: hidden;
-      font-family: Montserrat;
-    }
-    &:hover:not(.item3) .category {
-      visibility: visible;
-      backdrop-filter: blur(3px);
-      box-sizing: border-box;
-    }
-  }
 }
 
 .galleryImage {
@@ -393,9 +350,6 @@ video {
   height: 100%;
   object-fit: cover;
   transition: 0.5s ease-in-out;
-  &:hover {
-    transform: scale(1.04);
-  }
 }
 
 footer {
@@ -427,7 +381,7 @@ footer {
   src: url("../fonts/Montserrat-Medium.ttf");
 }
 
-img {
+img:not(#firma) {
   cursor: pointer;
 }
 
@@ -446,6 +400,7 @@ img {
   position: relative;
   display: inline-block;
   transition: all 1s ease-in-out;
+  z-index: 9999;
 }
 
 /* Dropdown Content (Hidden by Default) */

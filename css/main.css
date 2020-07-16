@@ -11,7 +11,7 @@ div,
 ul {
   margin: 0;
   padding: 0;
-  font-family: Montserrat;
+  font-family: Montserrat !important;
 }
 
 .inclusiveGrid {
@@ -178,6 +178,7 @@ video {
 }
 
 #title {
+  margin-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,22 +193,20 @@ video {
   background-repeat: no-repeat;
   background-position: top;
   width: 100%;
-  height: 300px;
+  height: 450px;
 }
 
-#title a,
 #title #firma {
-  width: 500px;
+  width: 700px;
   max-width: 100%;
   height: 100%;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
-#title a:hover,
 #title #firma:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .mainNav {
@@ -255,20 +254,9 @@ video {
   color: #ff3399;
 }
 
-.homePageGrid {
-  padding-left: 10% !important;
-  padding-right: 10% !important;
-  -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit] !important;
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) !important;
-}
-
 @media only screen and (max-width: 1078px) {
   .mainTitle {
     padding-top: 10%;
-  }
-  .homePageGrid {
-    -ms-grid-columns: none !important;
-        grid-template-columns: none !important;
   }
   #title {
     background-image: url("../img/assests/portadamod.jpg");
@@ -294,7 +282,7 @@ video {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
+  #main:not(.inclusiveGrid) {
     -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit] !important;
         grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)) !important;
   }
@@ -345,18 +333,16 @@ video {
 @media only screen and (max-width: 768px) {
   #title {
     background-image: url("../img/assests/768p.jpg");
+    height: 450px;
   }
 }
 
 @media only screen and (max-width: 425px) {
   #title {
-    background-image: url("../img/assests/425p.jpg");
+    background-image: url("../img/assests/425.jpg");
+    height: 300px;
   }
-  .homePageGrid {
-    -ms-grid-columns: (minmax(13rem, 1fr))[auto-fit] !important;
-        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)) !important;
-  }
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
+  #main:not(.inclusiveGrid) {
     -ms-grid-columns: (minmax(6rem, 1fr))[auto-fit] !important;
         grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)) !important;
   }
@@ -364,7 +350,8 @@ video {
 
 @media only screen and (max-width: 375px) {
   #title {
-    background-image: url("../img/assests/375p.jpg");
+    background-image: url("../img/assests/375.jpg");
+    height: 300px;
   }
   .mainNav li {
     margin-left: 0;
@@ -375,16 +362,18 @@ video {
 }
 
 @media only screen and (max-width: 320px) {
-  #main:not(.inclusiveGrid):not(.homePageGrid) {
+  #main:not(.inclusiveGrid) {
     -ms-grid-columns: (minmax(4rem, 1fr))[auto-fit] !important;
         grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)) !important;
   }
   #title {
-    background-image: url("../img/assests/320p.jpg");
+    background-image: url("../img/assests/320.jpg");
+    height: 300px;
   }
 }
 
-#myBtn {
+#goTopButton {
+  border-radius: 360px;
   font-size: larger;
   opacity: 0.6;
   width: 30px;
@@ -403,7 +392,7 @@ video {
   /* Remove borders */
   outline: none;
   /* Remove outline */
-  background-color: #696969;
+  background-color: #ff3399;
   /* Set a background color */
   color: white;
   /* Text color */
@@ -411,8 +400,8 @@ video {
   /* Add a mouse pointer on hover */
 }
 
-#myBtn:hover {
-  background-color: #555;
+#goTopButton:hover {
+  background-color: #fc71b6;
   /* Add a dark-grey background on hover */
 }
 
@@ -483,59 +472,6 @@ video {
           box-sizing: border-box;
 }
 
-#main .item1 {
-  background-image: url("../img/gallery/ceramica/20.jpg");
-}
-
-#main .item2 {
-  background-image: url("../img/gallery/ceramica/21.jpg");
-}
-
-#main .item3 {
-  background-image: url("../img/gallery/ceramica/22.jpg");
-}
-
-#main .item4 {
-  background-image: url("../img/gallery/ceramica/23.jpg");
-}
-
-#main .item5 {
-  background-image: url("../img/gallery/ceramica/24.jpg");
-}
-
-#main div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-size: cover;
-  background-position-x: center;
-}
-
-#main div .category {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0;
-  padding: 150px;
-  width: 100%;
-  visibility: hidden;
-  font-family: Montserrat;
-}
-
-#main div:hover:not(.item3) .category {
-  visibility: visible;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .galleryImage {
   width: 100%;
   height: 100%;
@@ -543,11 +479,6 @@ video {
      object-fit: cover;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
-}
-
-.galleryImage:hover {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
 }
 
 footer {
@@ -587,7 +518,7 @@ footer a {
   src: url("../fonts/Montserrat-Medium.ttf");
 }
 
-img {
+img:not(#firma) {
   cursor: pointer;
 }
 
@@ -608,6 +539,7 @@ img {
   display: inline-block;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  z-index: 9999;
 }
 
 /* Dropdown Content (Hidden by Default) */
