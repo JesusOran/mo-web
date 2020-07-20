@@ -115,11 +115,11 @@ video {
 #title {
   overflow-x: hidden;
   overflow-y: hidden;
-  margin-bottom: 100px;
+  margin-bottom: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/assests/portadamod.jpg");
+  background-image: url("../img/assests/1500.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -168,22 +168,12 @@ video {
   }
 }
 
-@media only screen and (max-width: 1078px) {
-  .mainTitle {
-    padding-top: 10%;
-  }
-
-  #title {
-    background-image: url("../img/assests/portadamod.jpg");
-  }
-}
-
 @media only screen and (max-width: 1024px) {
   .inclusiveGrid {
     grid-template-columns: none !important;
   }
   #title {
-    background-image: url("../img/assests/1024p.jpg");
+    background-image: url("../img/assests/1024.jpg");
   }
 }
 
@@ -239,14 +229,14 @@ video {
 
 @media only screen and (max-width: 768px) {
   #title {
-    background-image: url("../img/assests/768p.jpg");
+    background-image: url("../img/assests/768.jpg");
     height: 450px;
   }
 }
 
 @media only screen and (max-width: 425px) {
   #title {
-    background-image: url("../img/assests/425.jpg");
+    background-image: url("../img/assests/420.jpg");
     height: 300px;
   }
   #main:not(.inclusiveGrid) {
