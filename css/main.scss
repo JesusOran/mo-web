@@ -5,6 +5,8 @@
   --wrapperH: 40px;
 }
 
+$font-color: #ff3399;
+
 html,
 body,
 div,
@@ -159,12 +161,12 @@ video {
       text-decoration: none;
       font-family: Montserrat;
       font-size: larger;
-      color: #ff3399;
+      color: $font-color;
     }
   }
   .icon {
     display: none;
-    color: #ff3399;
+    color: $font-color;
   }
 }
 
@@ -282,7 +284,7 @@ video {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: #ff3399; /* Set a background color */
+  background-color: $font-color; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
 }
@@ -350,7 +352,7 @@ video {
 footer {
   margin-top: 5%;
   font-size: 20px;
-  color: #ff3399;
+  color: $font-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -362,7 +364,7 @@ footer {
   a {
     margin-right: 10px;
     text-decoration: none;
-    color: #ff3399;
+    color: $font-color;
   }
 }
 
