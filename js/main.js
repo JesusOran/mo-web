@@ -73,7 +73,7 @@ $(".mainNav > ul")
     switch (category) {
       case "ceramic":
         category = "ceramica";
-        galleryLenght = 33;
+        galleryLenght = 34;
         row = 7;
         col = 5;
         break;
